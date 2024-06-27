@@ -21,7 +21,7 @@ function App() {
     './elnaz_nesting_side_tables_brass__green_marble.glb',
     './chairmans-chair.glb',
   ];
-  let modelScaleFactor = [0.005, 0.005, 0.005, 0.005, 0.005, 0.005, 0.0005];
+  let modelScaleFactor = [0.005, 0.005, 0.005, 0.005, 0.005, 0.005, 0.003];
   let items = [];
   let itemSelectedIndex = 0;
 
@@ -95,7 +95,7 @@ function App() {
       new THREE.MeshBasicMaterial()
     );
     reticle.matrixAutoUpdate = false;
-    reticle.visible = false;
+    reticle.visible = true;
     scene.add(reticle);
   }
 
