@@ -21,7 +21,7 @@ function App() {
     './elnaz_nesting_side_tables_brass__green_marble.glb',
     './chairmans-chair.glb',
   ];
-  let modelScaleFactor = [0.005, 0.005, 0.005, 0.005, 0.005, 0.005, 0.008];
+  let modelScaleFactor = [0.01, 0.005, 0.002, 0.005, 0.005, 0.005, 0.008];
   let items = [];
   let itemSelectedIndex = 0;
 
@@ -121,9 +121,9 @@ function App() {
 
     for (let i = 0; i < models.length; i++) {
       const el = document.querySelector(`#item` + i);
-      el.classList.remove('scale-[1.20]');
+      el.classList.remove('scale-[1.5]');
     }
-    e.target.classList.add('scale-[1.20]');
+    e.target.classList.add('scale-[1.5]');
   };
 
   function setupFurnitureSelection() {
@@ -149,46 +149,6 @@ function App() {
     renderer.setAnimationLoop(render);
   }
 
-  // function render(timestamp, frame) {
-  //   if (frame) {
-  //     const referenceSpace = renderer.xr.getReferenceSpace();
-  //     const session = renderer.xr.getSession();
-
-  //     if (hitTestSourceRequested === false) {
-  //       session.requestReferenceSpace('viewer').then(function (referenceSpace) {
-  //         session
-  //           .requestHitTestSource({ space: referenceSpace })
-  //           .then(function (source) {
-  //             hitTestSource = source;
-  //           });
-  //       });
-
-  //       session.addEventListener('end', function () {
-  //         hitTestSourceRequested = false;
-  //         hitTestSource = null;
-  //       });
-
-  //       hitTestSourceRequested = true;
-  //     }
-
-  //     if (hitTestSource) {
-  //       const hitTestResults = frame.getHitTestResults(hitTestSource);
-
-  //       if (hitTestResults.length) {
-  //         const hit = hitTestResults[0];
-
-  //         reticle.visible = true;
-  //         reticle.matrix.fromArray(
-  //           hit.getPose(referenceSpace).transform.matrix
-  //         );
-  //       } else {
-  //         reticle.visible = false;
-  //       }
-  //     }
-  //   }
-
-  //   renderer.render(scene, camera);
-  // }
   function render(timestamp, frame) {
     if (frame) {
       const referenceSpace = renderer.xr.getReferenceSpace();
@@ -234,7 +194,7 @@ function App() {
       <canvas id="canvas"></canvas>
       <div className="overflow-y-hidden overflow-x-scroll inline-block fixed bottom-0 h-[100px] no-scrollbar select-none w-full whitespace-nowrap px-3">
         {' '}
-        <div className="size-[80px] border rounded-xl items-center justify-center p-2 inline-block mr-3 ">
+        <div className="size-[80px] rounded-xl items-center justify-center p-2 inline-block mr-3 bg-white/30 backdrop-blur-sm backdrop-brightness-50">
           {' '}
           <img
             className="object-contain object-center transition-all duration-200 size-full"
@@ -243,7 +203,7 @@ function App() {
             alt="Dylan Armchair"
           />
         </div>
-        <div className="size-[80px] border rounded-xl items-center justify-center p-2 inline-block mr-3">
+        <div className="size-[80px] rounded-xl items-center justify-center p-2 inline-block mr-3 bg-white/30 backdrop-blur-sm backdrop-brightness-50">
           {' '}
           <img
             className="object-contain object-center transition-all duration-200 size-full"
@@ -252,7 +212,7 @@ function App() {
             alt="Ivan Armchair"
           />
         </div>
-        <div className="size-[80px] border rounded-xl items-center justify-center p-2 inline-block mr-3">
+        <div className="size-[80px] rounded-xl items-center justify-center p-2 inline-block mr-3 bg-white/30 backdrop-blur-sm backdrop-brightness-50">
           {' '}
           <img
             className="object-contain object-center transition-all duration-200 size-full"
@@ -261,7 +221,7 @@ function App() {
             alt="Marble Coffee Table"
           />
         </div>
-        <div className="size-[80px] border rounded-xl items-center justify-center p-2 inline-block mr-3">
+        <div className="size-[80px] rounded-xl items-center justify-center p-2 inline-block mr-3 bg-white/30 backdrop-blur-sm backdrop-brightness-50">
           {' '}
           <img
             className="object-contain object-center transition-all duration-200 size-full"
@@ -270,7 +230,7 @@ function App() {
             alt="Flippa Coffee Table"
           />
         </div>
-        <div className="size-[80px] border rounded-xl items-center justify-center p-2 inline-block mr-3">
+        <div className="size-[80px] rounded-xl items-center justify-center p-2 inline-block mr-3 bg-white/30 backdrop-blur-sm backdrop-brightness-50">
           {' '}
           <img
             className="object-contain object-center transition-all duration-200 size-full"
@@ -279,7 +239,7 @@ function App() {
             alt="Frame Armchair"
           />
         </div>
-        <div className="size-[80px] border rounded-xl items-center justify-center p-2 inline-block mr-3">
+        <div className="size-[80px] rounded-xl items-center justify-center p-2 inline-block mr-3 bg-white/30 backdrop-blur-sm backdrop-brightness-50">
           {' '}
           <img
             className="object-contain object-center transition-all duration-200 size-full"
@@ -288,7 +248,7 @@ function App() {
             alt="Elnaz Side Tables"
           />
         </div>
-        <div className="size-[80px] border rounded-xl items-center justify-center p-2 inline-block mr-3">
+        <div className="size-[80px] rounded-xl items-center justify-center p-2 inline-block mr-3 bg-white/30 backdrop-blur-sm backdrop-brightness-50">
           {' '}
           <img
             className="object-contain object-center transition-all duration-200 size-full"
