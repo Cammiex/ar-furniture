@@ -120,9 +120,9 @@ function App() {
 
     for (let i = 0; i < models.length; i++) {
       const el = document.querySelector(`#item` + i);
-      el.classList.remove('clicked');
+      el.classList.remove('scale-[1.20]');
     }
-    e.target.classList.add('clicked');
+    e.target.classList.add('scale-[1.20]');
   };
 
   function setupFurnitureSelection() {
@@ -190,68 +190,68 @@ function App() {
   }
 
   return (
-    <div className="App">
+    <div className="overflow-x-hidden App">
       <canvas id="canvas"></canvas>
-      <div className="overflow-y-hidden overflow-x-scroll flex whitespace-nowrap fixed bottom-0 w-fit h-[100px] p-2 gap-5 no-scrollbar select-none">
+      <div className="overflow-y-hidden overflow-x-scroll inline-block fixed bottom-0 h-[100px] no-scrollbar select-none w-full whitespace-nowrap px-3">
         {' '}
-        <div className="size-[80px] border rounded-xl flex items-center justify-center p-2">
+        <div className="size-[80px] border rounded-xl items-center justify-center p-2 inline-block mr-3">
           {' '}
           <img
-            className="object-contain object-center size-full"
+            className="object-contain object-center transition-all duration-200 size-full"
             id="item0"
             src="/armchair.png"
             alt="Dylan Armchair"
           />
         </div>
-        <div className="size-[80px] border rounded-xl flex items-center justify-center p-2">
+        <div className="size-[80px] border rounded-xl items-center justify-center p-2 inline-block mr-3">
           {' '}
           <img
-            className="object-contain object-center size-full"
+            className="object-contain object-center transition-all duration-200 size-full"
             id="item1"
             src="/lounger.png"
             alt="Ivan Armchair"
           />
         </div>
-        <div className="size-[80px] border rounded-xl flex items-center justify-center p-2">
+        <div className="size-[80px] border rounded-xl items-center justify-center p-2 inline-block mr-3">
           {' '}
           <img
-            className="object-contain object-center size-full"
+            className="object-contain object-center transition-all duration-200 size-full"
             id="item2"
             src="/marble-coffeetable.png"
             alt="Marble Coffee Table"
           />
         </div>
-        <div className="size-[80px] border rounded-xl flex items-center justify-center p-2">
+        <div className="size-[80px] border rounded-xl items-center justify-center p-2 inline-block mr-3">
           {' '}
           <img
-            className="object-contain object-center size-full"
+            className="object-contain object-center transition-all duration-200 size-full"
             id="item3"
             src="/walnut-coffeetable.png"
             alt="Flippa Coffee Table"
           />
         </div>
-        <div className="size-[80px] border rounded-xl flex items-center justify-center p-2">
+        <div className="size-[80px] border rounded-xl items-center justify-center p-2 inline-block mr-3">
           {' '}
           <img
-            className="object-contain object-center size-full"
+            className="object-contain object-center transition-all duration-200 size-full"
             id="item4"
             src="/chair-with-gold.png"
             alt="Frame Armchair"
           />
         </div>
-        <div className="size-[80px] border rounded-xl flex items-center justify-center p-2">
+        <div className="size-[80px] border rounded-xl items-center justify-center p-2 inline-block mr-3">
           {' '}
           <img
-            className="object-contain object-center size-full"
+            className="object-contain object-center transition-all duration-200 size-full"
             id="item5"
             src="/nesting-tables.png"
             alt="Elnaz Side Tables"
           />
         </div>
-        <div className="size-[80px] border rounded-xl flex items-center justify-center p-2">
+        <div className="size-[80px] border rounded-xl items-center justify-center p-2 inline-block mr-3">
           {' '}
           <img
-            className="object-contain object-center size-full"
+            className="object-contain object-center transition-all duration-200 size-full"
             id="item6"
             src="/chairmans-chair.png"
             alt="Chairman's Chair"

@@ -27,12 +27,6 @@
   height: 100px;
 }
 
-.clicked {
-  border: 2px;
-  color: white;
-  border-style: solid;
-}
-
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }
