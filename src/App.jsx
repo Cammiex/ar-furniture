@@ -31,6 +31,7 @@ function App() {
     init();
     setupFurnitureSelection();
     animate();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   function init() {
@@ -148,6 +149,46 @@ function App() {
     renderer.setAnimationLoop(render);
   }
 
+  // function render(timestamp, frame) {
+  //   if (frame) {
+  //     const referenceSpace = renderer.xr.getReferenceSpace();
+  //     const session = renderer.xr.getSession();
+
+  //     if (hitTestSourceRequested === false) {
+  //       session.requestReferenceSpace('viewer').then(function (referenceSpace) {
+  //         session
+  //           .requestHitTestSource({ space: referenceSpace })
+  //           .then(function (source) {
+  //             hitTestSource = source;
+  //           });
+  //       });
+
+  //       session.addEventListener('end', function () {
+  //         hitTestSourceRequested = false;
+  //         hitTestSource = null;
+  //       });
+
+  //       hitTestSourceRequested = true;
+  //     }
+
+  //     if (hitTestSource) {
+  //       const hitTestResults = frame.getHitTestResults(hitTestSource);
+
+  //       if (hitTestResults.length) {
+  //         const hit = hitTestResults[0];
+
+  //         reticle.visible = true;
+  //         reticle.matrix.fromArray(
+  //           hit.getPose(referenceSpace).transform.matrix
+  //         );
+  //       } else {
+  //         reticle.visible = false;
+  //       }
+  //     }
+  //   }
+
+  //   renderer.render(scene, camera);
+  // }
   function render(timestamp, frame) {
     if (frame) {
       const referenceSpace = renderer.xr.getReferenceSpace();
@@ -175,13 +216,12 @@ function App() {
 
         if (hitTestResults.length) {
           const hit = hitTestResults[0];
-
           reticle.visible = true;
           reticle.matrix.fromArray(
             hit.getPose(referenceSpace).transform.matrix
           );
         } else {
-          reticle.visible = true;
+          reticle.visible = false;
         }
       }
     }
@@ -194,7 +234,7 @@ function App() {
       <canvas id="canvas"></canvas>
       <div className="overflow-y-hidden overflow-x-scroll inline-block fixed bottom-0 h-[100px] no-scrollbar select-none w-full whitespace-nowrap px-3">
         {' '}
-        <div className="size-[80px] border rounded-xl items-center justify-center p-2 inline-block mr-3">
+        <div className="size-[80px] border rounded-xl items-center justify-center p-2 inline-block mr-3 ">
           {' '}
           <img
             className="object-contain object-center transition-all duration-200 size-full"
