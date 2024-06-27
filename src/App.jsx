@@ -95,7 +95,7 @@ function App() {
       new THREE.MeshBasicMaterial()
     );
     reticle.matrixAutoUpdate = false;
-    reticle.visible = true;
+    reticle.visible = false;
     scene.add(reticle);
   }
 
@@ -181,7 +181,7 @@ function App() {
             hit.getPose(referenceSpace).transform.matrix
           );
         } else {
-          reticle.visible = false;
+          reticle.visible = true;
         }
       }
     }
