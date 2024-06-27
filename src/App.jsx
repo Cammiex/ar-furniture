@@ -21,7 +21,7 @@ function App() {
     './elnaz_nesting_side_tables_brass__green_marble.glb',
     './chairmans-chair.glb',
   ];
-  let modelScaleFactor = [0.005, 0.005, 0.005, 0.005, 0.005, 0.005, 0.003];
+  let modelScaleFactor = [0.005, 0.005, 0.005, 0.005, 0.005, 0.005, 0.008];
   let items = [];
   let itemSelectedIndex = 0;
 
