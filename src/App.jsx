@@ -4,6 +4,7 @@ import { ARButton } from 'three/examples/jsm/webxr/ARButton';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 import { XREstimatedLight } from 'three/examples/jsm/webxr/XREstimatedLight';
 import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 function App() {
   let reticle;
@@ -21,7 +22,7 @@ function App() {
     './elnaz_nesting_side_tables_brass__green_marble.glb',
     './chairmans-chair.glb',
   ];
-  let modelScaleFactor = [0.01, 0.005, 0.002, 0.005, 0.005, 0.005, 0.008];
+  let modelScaleFactor = [0.005, 0.005, 0.005, 0.005, 0.005, 0.005, 0.002];
   let items = [];
   let itemSelectedIndex = 0;
 
@@ -71,13 +72,15 @@ function App() {
       scene.remove(xrLight);
     });
 
+    let field = document.getElementById('field');
     let arButton = ARButton.createButton(renderer, {
       requiredFeatures: ['hit-test'],
       optionalFeatures: ['dom-overlay', 'light-estimation'],
       domOverlay: { root: document.body },
     });
     arButton.style.bottom = '20%';
-    document.body.appendChild(arButton);
+    // document.body.appendChild(arButton);
+    field.appendChild(arButton);
 
     for (let i = 0; i < models.length; i++) {
       const loader = new GLTFLoader();
@@ -189,8 +192,16 @@ function App() {
     renderer.render(scene, camera);
   }
 
+  const navigate = useNavigate();
+
   return (
-    <div className="overflow-x-hidden App">
+    <div className="relative overflow-x-hidden App" id="field">
+      <button
+        onClick={() => navigate('/')}
+        className="size-[48px] rounded-lg border border-[#7B6247] flex items-center justify-center active:scale-95 transition-all duration-200 absolute top-[27px] left-[21px]"
+      >
+        <img src="/arrow.png" alt="" className="size-6" />
+      </button>
       <canvas id="canvas"></canvas>
       <div className="overflow-y-hidden overflow-x-scroll inline-block fixed bottom-0 h-[100px] no-scrollbar select-none w-full whitespace-nowrap px-3">
         {' '}
